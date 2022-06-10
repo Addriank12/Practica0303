@@ -7,6 +7,7 @@ package controlador;
 import Servicio.EquipoServicio;
 import java.util.List;
 import modelo.Equipo;
+import modelo.Jugador;
 
 /**
  *
@@ -14,7 +15,7 @@ import modelo.Equipo;
  */
 public class ControladorEquipo
 {
-    private final EquipoServicio equipoServicio = new EquipoServicio();
+    private static EquipoServicio equipoServicio = new EquipoServicio();
     
     public Equipo crear(String[] params){
         Equipo equipo = new Equipo(params[0], Integer.valueOf(params[1]), params[2], params[3], Integer.valueOf(params[4]));

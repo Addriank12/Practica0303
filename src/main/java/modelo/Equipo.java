@@ -4,6 +4,8 @@
  */
 package modelo;
 
+import java.util.List;
+
 /**
  *
  * @author Adrian
@@ -22,9 +24,12 @@ public class Equipo
         this.confederacion = confederacion;
         this.propietario = propietario;
         this.gastos = gastos;
+        
     }
 
-    public String getNombre() {
+    
+    
+     public String getNombre() {
         return nombre;
     }
 

@@ -16,7 +16,12 @@ public class VentanaEquipo extends javax.swing.JFrame {
     ControladorEquipo controladorEquipo;
     /**
      * Creates new form VentanaCapitan
+     * @return 
      */
+    public ControladorEquipo getControladorEquipo()
+    {
+        return controladorEquipo;
+    }
     public VentanaEquipo() {
         initComponents();
         controladorEquipo = new ControladorEquipo();
@@ -38,13 +43,13 @@ public class VentanaEquipo extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,8 +66,6 @@ public class VentanaEquipo extends javax.swing.JFrame {
         jTextField1.setColumns(15);
 
         jTextField2.setColumns(15);
-
-        jTextField3.setColumns(15);
 
         jTextField4.setColumns(15);
 
@@ -95,6 +98,8 @@ public class VentanaEquipo extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CONCACAF", "CONMEBOL", "CAF", "UEFA", "AFC" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -112,12 +117,12 @@ public class VentanaEquipo extends javax.swing.JFrame {
                             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
                             .addComponent(jTextField2)
-                            .addComponent(jTextField3)
                             .addComponent(jTextField4)
-                            .addComponent(jTextField5))))
-                .addContainerGap(24, Short.MAX_VALUE))
+                            .addComponent(jTextField5)
+                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2)
@@ -139,7 +144,7 @@ public class VentanaEquipo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -165,9 +170,10 @@ public class VentanaEquipo extends javax.swing.JFrame {
         String[] args = new String[5];
         args[0] = jTextField1.getText();
         args[1] = jTextField2.getText();
-        args[2] = jTextField3.getText();
+        args[2] = jComboBox1.getSelectedItem().toString();
         args[3] = jTextField4.getText();
         args[4] = jTextField5.getText();
+        
         controladorEquipo.crear(args);
         updateTable();
         
@@ -236,6 +242,7 @@ public class VentanaEquipo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -245,7 +252,6 @@ public class VentanaEquipo extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
